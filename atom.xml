@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dululu.tk/"/>
-  <updated>2019-05-28T02:55:38.589Z</updated>
+  <updated>2019-09-28T04:54:46.595Z</updated>
   <id>https://dululu.tk/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>存活测试（非更新内容）</title>
+    <link href="https://dululu.tk/2019/09/28/cunhuoceshi-noupdate/"/>
+    <id>https://dululu.tk/2019/09/28/cunhuoceshi-noupdate/</id>
+    <published>2019-09-28T04:51:07.000Z</published>
+    <updated>2019-09-28T04:54:46.595Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="解析失败"><a href="#解析失败" class="headerlink" title="解析失败"></a>解析失败</h1><table><tr><td bgcolor="red">解析失败 warning！</td></tr></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;解析失败&quot;&gt;&lt;a href=&quot;#解析失败&quot; class=&quot;headerlink&quot; title=&quot;解析失败&quot;&gt;&lt;/a&gt;解析失败&lt;/h1&gt;&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=&quot;red&quot;&gt;解析失败 warning！&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
