@@ -17,18 +17,7 @@
 <h4 id="配置AriaNG"><a href="#配置AriaNG" class="headerlink" title="配置AriaNG"></a>配置AriaNG</h4><p>将前面记录的基本配置信息填入AriaNG设置中。<br>修改下载路径为<code>/www/wwwroot/abc.com</code> ，确保下载路径为网站根目录，且与h5ai同级。</p>
 <h2 id="安装配置h5ai"><a href="#安装配置h5ai" class="headerlink" title="安装配置h5ai"></a>安装配置h5ai</h2><p>官网地址<a href="https://larsjung.de/h5ai/" target="_blank" rel="noopener">https://larsjung.de/h5ai/</a> 下载压缩包。最新版本直接download即可。<br>将h5ai的压缩包上传到根目录并解压。</p>
 <h2 id="配置域名"><a href="#配置域名" class="headerlink" title="配置域名"></a>配置域名</h2><p>修改域名解析，配置为服务器的IP地址即可。</p>
-<h2 id="加入密码"><a href="#加入密码" class="headerlink" title="加入密码"></a>加入密码</h2><p>1、在头部&lt;?php的下一行，增加<br><code>auth();</code><br>2、在底部增加<br>`function auth ()<br>{<br>        $valid_passwords = array (“账号” =&gt; “密码”);<br>        $valid_users = array_keys($valid_passwords);</p>
-<pre><code>$user = $_SERVER[&apos;PHP_AUTH_USER&apos;];
-$pass = $_SERVER[&apos;PHP_AUTH_PW&apos;];
-
-$validated = (in_array($user, $valid_users)) &amp;&amp; ($pass == $valid_passwords[$user]);
-
-if (!$validated) {
-  header(&apos;WWW-Authenticate: Basic realm=&quot;My Realm&quot;&apos;);
-  header(&apos;HTTP/1.0 401 Unauthorized&apos;);
-  die (&quot;Not authorized&quot;);
-}
-</code></pre><p>}`</p>
+<h2 id="加入密码"><a href="#加入密码" class="headerlink" title="加入密码"></a>加入密码</h2><p>1、在头部<code>&lt;?php</code>的下一行，增加<br><code>auth();</code><br>2、在底部增加<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function auth ()</span><br><span class="line">&#123;</span><br><span class="line">        $valid_passwords = array (&quot;账号&quot; =&gt; &quot;密码&quot;);</span><br><span class="line">        $valid_users = array_keys($valid_passwords);</span><br><span class="line"></span><br><span class="line">        $user = $_SERVER[&apos;PHP_AUTH_USER&apos;];</span><br><span class="line">        $pass = $_SERVER[&apos;PHP_AUTH_PW&apos;];</span><br><span class="line"></span><br><span class="line">        $validated = (in_array($user, $valid_users)) &amp;&amp; ($pass == $valid_passwords[$user]);</span><br><span class="line"></span><br><span class="line">        if (!$validated) &#123;</span><br><span class="line">          header(&apos;WWW-Authenticate: Basic realm=&quot;My Realm&quot;&apos;);</span><br><span class="line">          header(&apos;HTTP/1.0 401 Unauthorized&apos;);</span><br><span class="line">          die (&quot;Not authorized&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>注：账号和密码可以随便填。</p>
 ]]></content>
   </entry>
