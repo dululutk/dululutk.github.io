@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dululu.tk/"/>
-  <updated>2019-11-26T14:50:05.431Z</updated>
+  <updated>2019-11-29T05:47:51.385Z</updated>
   <id>https://dululu.tk/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20191129134751</title>
+    <link href="https://dululu.tk/2019/11/29/%E6%9B%B4%E6%8D%A2%E6%96%B0%E5%9F%9F%E5%90%8DDULULU.IO/"/>
+    <id>https://dululu.tk/2019/11/29/更换新域名DULULU.IO/</id>
+    <published>2019-11-29T05:47:51.000Z</published>
+    <updated>2019-11-29T05:47:51.385Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>利用Aria2搭建离线下载私有云</title>
