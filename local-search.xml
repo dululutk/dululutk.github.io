@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>基于Onedrive创建共享盘</title>
+    <link href="/2022/05/16/OneManager/"/>
+    <url>/2022/05/16/OneManager/</url>
+    
+    <content type="html"><![CDATA[<p>增加了云盘功能。</p><span id="more"></span><center><font face="Comic Sans MS" color=red size=5>Dululu云盘</font></center><center><font face="Comic Sans MS" color=green size=10>[dululu.cloud](https://dululu.cloud)</font></center>PS:一日两坑。]]></content>
+    
+    
+    <categories>
+      
+      <category>折腾日记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>onedrive</tag>
+      
+      <tag>onemanager</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>短链接功能</title>
+    <link href="/2022/05/16/ShortURL/"/>
+    <url>/2022/05/16/ShortURL/</url>
+    
+    <content type="html"><![CDATA[<p>增加了短链接功能。</p><span id="more"></span><center><font face="Comic Sans MS" color=red size=5>短链链</font></center><center><font face="Comic Sans MS" color=green size=10>[dll.llc](https://dll.llc)</font></center>PS:我为自己挖坑后续再补充笔记。]]></content>
+    
+    
+    <categories>
+      
+      <category>折腾日记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>功能</tag>
+      
+      <tag>短链接</tag>
+      
+      <tag>shorturl</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>域名分类</title>
+    <link href="/2022/05/12/DomainChange/"/>
+    <url>/2022/05/12/DomainChange/</url>
+    
+    <content type="html"><![CDATA[<p>注册了几个域名打算把瞎搞和生活向分开。</p><span id="more"></span><center><font face="Comic Sans MS" color=red size=5>杂七杂八</font></center><center><font face="Comic Sans MS" color=green size=10>[dululu.io or dulu.lu](https://dululu.io)</font></center><center><font face="Comic Sans MS" color=green size=5>生活向</font></center><center><font face="Comic Sans MS" color=green size=10>[ano.moe](https://ano.moe)</font></center>]]></content>
+    
+    
+    <categories>
+      
+      <category>折腾日记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>域名</tag>
+      
+      <tag>生活向</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>利用Aria2搭建离线下载私有云</title>
+    <link href="/2019/11/26/Aria2-baota-AriaNG/"/>
+    <url>/2019/11/26/Aria2-baota-AriaNG/</url>
+    
+    <content type="html"><![CDATA[<p>最近弄了几个Vultr的小鸡子，领了$50的体验券，本来是想用来科学上网，但是客服联系我是重复账户。撤销了我的券，没办法删了几个机房，剩下几个做离线下载用。</p><span id="more"></span><h1 id="基本条件"><a href="#基本条件" class="headerlink" title="基本条件"></a>基本条件</h1><p>1.小服务器（选的Vultr日本）<br>2.CentOS 7+<br>3.几个小脚本 ：<code>doub的aira2</code>、<code>ariaNG</code>一键安装脚本、<code>h5ai</code><br>4.宝塔面板</p><h1 id="步骤过程"><a href="#步骤过程" class="headerlink" title="步骤过程"></a>步骤过程</h1><h2 id="安装宝塔面板"><a href="#安装宝塔面板" class="headerlink" title="安装宝塔面板"></a>安装宝塔面板</h2><h3 id="Centos命令安装宝塔"><a href="#Centos命令安装宝塔" class="headerlink" title="Centos命令安装宝塔"></a>Centos命令安装宝塔</h3><p><code>yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</code></p><h3 id="宝塔面板安装基本环境"><a href="#宝塔面板安装基本环境" class="headerlink" title="宝塔面板安装基本环境"></a>宝塔面板安装基本环境</h3><p>脚本运行需要lnmp环境(并非必须为以下版本)<br>安装[phpmyadmin-4.7]<br>安装[php-7.2]<br>安装[pureftpd-1.0.49]<br>安装[mysql-5.6]<br>安装[nginx-1.16]</p><h3 id="修改宝塔面板端口"><a href="#修改宝塔面板端口" class="headerlink" title="修改宝塔面板端口"></a>修改宝塔面板端口</h3><p>放行6800端口，aria2下载会使用此端口，修改面板登录默认端口8888</p><h3 id="修改宝塔面板禁用函数"><a href="#修改宝塔面板禁用函数" class="headerlink" title="修改宝塔面板禁用函数"></a>修改宝塔面板禁用函数</h3><p>由于使用到的h5ai需要调用一些“不安全”的函数，为了是其能正常运行因此将用到的函数予以放行。<br>放行如下函数：<code>scandir</code>、<code>exec</code>、<code>passthru</code>、<code>putenv</code><br>可以通过以下两种方式删除：<br>方法Ⅰ：利用PHP管理，在配置文件中搜索disable_functions，将上述几个函数删除。<br>方法Ⅱ：利用PHP管理，在禁用函数中找到以上几个项目，予以删除。</p><h2 id="配置网站"><a href="#配置网站" class="headerlink" title="配置网站"></a>配置网站</h2><h4 id="添加站点"><a href="#添加站点" class="headerlink" title="添加站点"></a>添加站点</h4><p>在网站选项栏中添加站点，根目录命名随意，但是不要修改位置。添加域名例如abc.com(你的域名)。点击提交即可。</p><h4 id="修改站点配置"><a href="#修改站点配置" class="headerlink" title="修改站点配置"></a>修改站点配置</h4><p>点击创建好的站点，修改配置文件。<br>配置文件之后<code>root /www/wwwroot/abc.com;</code>添加下列语句<br><code>index index.html index.php /_h5ai/public/index.php;</code></p><h2 id="安装aria2"><a href="#安装aria2" class="headerlink" title="安装aria2"></a>安装aria2</h2><h3 id="使用命令安装逗doubi版Aria2一键安装脚本（其它亦可）"><a href="#使用命令安装逗doubi版Aria2一键安装脚本（其它亦可）" class="headerlink" title="使用命令安装逗doubi版Aria2一键安装脚本（其它亦可）"></a>使用命令安装逗doubi版Aria2一键安装脚本（其它亦可）</h3><p><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</code><br>选1安装，一路回车 or Y即可。</p><h3 id="记录下基本配置信息"><a href="#记录下基本配置信息" class="headerlink" title="记录下基本配置信息"></a>记录下基本配置信息</h3><p> 地址   : x.x.x.x<br> 端口   : 6800<br> 密码   : abcdef<br> 目录   : &#x2F;usr&#x2F;local&#x2F;caddy&#x2F;www&#x2F;aria2&#x2F;Download</p><h2 id="安装配置AriaNG"><a href="#安装配置AriaNG" class="headerlink" title="安装配置AriaNG"></a>安装配置AriaNG</h2><h3 id="安装ariaNG本地端"><a href="#安装ariaNG本地端" class="headerlink" title="安装ariaNG本地端"></a>安装ariaNG本地端</h3><p><a href="https://github.com/mayswind/AriaNg/releases">https://github.com/mayswind/AriaNg/releases</a><br>下载AriaNg-1.1.4-AllInOne.zip<br>即本地安装版本。为图方便，也可选择直接在系统上安装。</p><h3 id="配置AriaNG"><a href="#配置AriaNG" class="headerlink" title="配置AriaNG"></a>配置AriaNG</h3><p>将前面记录的基本配置信息填入AriaNG设置中。<br>修改下载路径为<code>/www/wwwroot/abc.com</code> ，确保下载路径为网站根目录，且与h5ai同级。</p><h2 id="安装配置h5ai"><a href="#安装配置h5ai" class="headerlink" title="安装配置h5ai"></a>安装配置h5ai</h2><h3 id="下载压缩包"><a href="#下载压缩包" class="headerlink" title="下载压缩包"></a>下载压缩包</h3><p>官网地址<a href="https://larsjung.de/h5ai/">https://larsjung.de/h5ai/</a> 下载压缩包。最新版本直接download即可。<br>将h5ai的压缩包上传到根目录并解压。</p><h2 id="配置域名"><a href="#配置域名" class="headerlink" title="配置域名"></a>配置域名</h2><p>修改域名解析，配置为服务器的IP地址即可。</p><h2 id="加入密码"><a href="#加入密码" class="headerlink" title="加入密码"></a>加入密码</h2><p>1、在头部<code>&lt;?php</code>的下一行，增加<br><code>auth();</code><br>2、在底部增加</p><figure class="highlight php"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><pre><code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">auth</span> (<span class="hljs-params"></span>)</span><br><span class="hljs-function"></span>&#123;<br>        <span class="hljs-variable">$valid_passwords</span> = <span class="hljs-keyword">array</span> (<span class="hljs-string">&quot;账号&quot;</span> =&gt; <span class="hljs-string">&quot;密码&quot;</span>);<br>        <span class="hljs-variable">$valid_users</span> = <span class="hljs-title function_ invoke__">array_keys</span>(<span class="hljs-variable">$valid_passwords</span>);<br><br>        <span class="hljs-variable">$user</span> = <span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&#x27;PHP_AUTH_USER&#x27;</span>];<br>        <span class="hljs-variable">$pass</span> = <span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&#x27;PHP_AUTH_PW&#x27;</span>];<br><br>        <span class="hljs-variable">$validated</span> = (<span class="hljs-title function_ invoke__">in_array</span>(<span class="hljs-variable">$user</span>, <span class="hljs-variable">$valid_users</span>)) &amp;&amp; (<span class="hljs-variable">$pass</span> == <span class="hljs-variable">$valid_passwords</span>[<span class="hljs-variable">$user</span>]);<br><br>        <span class="hljs-keyword">if</span> (!<span class="hljs-variable">$validated</span>) &#123;<br>          <span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;WWW-Authenticate: Basic realm=&quot;My Realm&quot;&#x27;</span>);<br>          <span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;HTTP/1.0 401 Unauthorized&#x27;</span>);<br>          <span class="hljs-keyword">die</span> (<span class="hljs-string">&quot;Not authorized&quot;</span>);<br>        &#125;<br>&#125;```<br><br>注：账号和密码可以随便填。<br><br><br><span class="hljs-comment"># 搭配rclone挂载Google Drive扩大空间</span><br><span class="hljs-comment">## 安装rclone</span><br>CentOS <span class="hljs-number">7</span> 命令 `curl https:<span class="hljs-comment">//rclone.org/install.sh`</span><br><br><span class="hljs-comment">## 选择Google Drive</span><br>看版本的具体选项<br><br></code></pre></td></tr></table></figure><p>输入n，新建盘，为文件命名 ，<strong>后面替换自行替换</strong><br>选择 12 &#x2F; Google Drive ，输入12回车就行<br>client_id&gt; 回车   &#x2F;&#x2F;id不需要<br>client_secret&gt; 回车  &#x2F;&#x2F;密码不需要<br>scope&gt; <strong>输入1，回车</strong><br>root_folder_id&gt; 回车  &#x2F;&#x2F;根目录id<br>service_account_file&gt; 回车<br>Edit advanced config? (y&#x2F;n) n &#x2F;&#x2F;不用高级设置<br>Use auto config?  n<br>复制显示的链接，获取密钥后粘贴，回车<br>选择n<br>选择y<br>输入q退出配置程序&#96;&#96;&#96;</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>aria2</tag>
+      
+      <tag>h5ai</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>At the very beginning</title>
+    <link href="/2019/05/22/At-the-very-beginning/"/>
+    <url>/2019/05/22/At-the-very-beginning/</url>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>这篇文章本该是<a href="https://dululu.io/2019/05/22/hello-world/"><strong>Hello World</strong></a>，但是想想Dululu是第二次“建站”了，Hello World也就没有必要了吧。之前使用老薛主机+WordPress博客组合，完全傻瓜式配置，一年租赁服务器还有一点开销。前两天老薛给我发了好几次到期提示，延期付款警告。<img src="https://dululu.io/img/tb0000003.png" alt="图片"><span id="more"></span>&amp;#160; &amp;#160; &amp;#160; &amp;#160;想着没了就没了吧。反正也是懒得更新了，而且网站配置的也是相当杂乱，访问速度慢，就这样吧。但是当我一次又一次看见书签栏里那个哆啦A梦时，这不就真没了？而且域名又再一次挂到了售卖栏。算了要不弄回来吧。所以，又一次有了这个小破博客。</p><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>因为闲逛逗比根据地，发现某网站可以免费注册域名，完全出于偶然的偶然，于是有了这个小破博客。<em><strong>Dululu</strong></em>,这个名字完全出于好玩<em>（《Something Just Like This》）</em>。因为当时注册域名的时候，想了好多好多的自认为有意思的名字都显示被抢注。</p><p>当时想法是想把网站挂到Amazon的EC2服务器上，因为免费可以白嫖（好像现在也是嘿，但是合理且被允许）。苦于没有信用卡，账号不被信任被封号数次，彻底放弃了那个想法。而且最早用<em><strong>Amazon</strong></em>的想法是搭一个酸酸乳，但是因为相同的原因就搁置了。于是转向了合理的建站方向，由于需要备案，时间长（主要是穷），网站未能备案，所以就采用了<strong>老薛主机＋WordPress</strong> ，*(后来发现.tk域名并不能备案)* 当然同样因为穷，主机放到了便宜的美帝，慢！卡！全占上了，导致后期我自己都不愿意开那个网站。</p><p>主要是没经验呀，从有想法注册域名，到网站可以登陆用了不到24个小时。对于没有丝毫HTML经验的我来说也是相当惊艳了（<em>王婆卖瓜的故事？</em>）。所以网站粗糙“不堪入目”也是理所当然。</p><p>&amp;#160; &amp;#160; &amp;#160; &amp;#160;那时博客的主要内容基本上都是四处Copy，加之少部分的自编内容，但是并没有什么实际用途，不过是闲得无聊把想法找个地方写出来罢了。写了一些基本上没人用的小窍门<em>（窍门？找不出词来形容了）</em>。后期网站也就没再维护过了，基本上也就荒废了。</p><h2 id="重生"><a href="#重生" class="headerlink" title="重生"></a>重生</h2><p>用<strong>重生</strong>这个词是因为显得高级，也符合实际情况，毕竟<em><strong>Dululu</strong></em>是真的死过一次啊。</p><p>上文提到了，这次重生也是白嫖。但是这个白嫖的代价就是肝疼，特别的疼。采用的建站方式是<strong>Hexo+GitHub Page+next主题</strong>。虽然肝疼，但是享受、没错了就是受虐狂本狂。而且这次的写作方式改成了**<code>Markdown标记语言</code><strong>, 为了可视化找了 <del><strong>MarkdownPad 2</strong></del>(现在已经更换为</strong>Heox editor**)这个软件来用于实时预览，我可不想写半天到最后才知道搞出来什么样子。就跟近视眼去理发之后戴上眼镜的那一刹那的surprise一样。</p><p>写作情况基本上就是这么个样子：</p><p><img src="https://dululu.io/img/%E5%86%99%E4%BD%9C%E7%94%BB%E9%9D%A2.JPG" alt="写作画面"></p><p>**<code>Markdown标记语言</code>**其实采用的十分广泛，知乎、简书里面都有这种语言。主要是简单好记。总共也没有多少语法，兼容性极强，所以采用这种语言十分方便。</p><p>网站部分个性化操作采用了<a href="https://www.jianshu.com/p/f054333ac9e6">这位同学</a>的内容，比如网站底部的<strong>访问人数</strong>，<strong>博客文字数量</strong>等内容。而网站采用了 <strong>Swiftype</strong> 作为搜索引擎、 <strong>LiveRe.（来必力）</strong> 作为评论系统等，<strong>LiveRe.（来必力）</strong> 可以使用SNS（社交账号）作为登录账号，所以访客得以更加方便的评论回复。</p><h2 id="未来计划"><a href="#未来计划" class="headerlink" title="未来计划"></a>未来计划</h2><p>这次建博客，目的就是写一点见闻，偶尔蹦出来的那些奇奇怪怪的想法。毕竟除了QQ空间、微博、朋友圈，博客现在是稀有的属于自己的一亩三分地了。当然，说是<strong>自己</strong>的一亩三分地，但是毕竟自己写东西也愿意有读者来看，有交流，否则闭门造车没啥实际意义，不过是自嗨罢了。还望不吝赐教。对于之前<code>1.0时期</code>,姑且称它为<code>1.0时期</code>吧，那些所谓的“技术流”尔尔没有太大的更新意愿，未来<strong>可能</strong>会辟出一块小地方做备份。未来可能还会辟出一片地方来备份自己见到的有意思的东西， <em>不限于文章</em> 等等。目前就这样吧。</p><p><del><font face="黑体" color=yellow size=2>FLAG: 尽量保持每周一篇的更新频率</font></del></p><p><font face="黑体" color=green size=5><em>Try to be a thinker AND A INTRESTING PERSON</em></font></p><p><font face="黑体" color=red size=5><em>Thanks！</em></font></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>建站之初</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>beginning</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
